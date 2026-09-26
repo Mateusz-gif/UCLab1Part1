@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
             String userName = name.getText().toString();
             String userPhone = phone.getText().toString();
+            String userEmail = email.getText().toString();
 
             if(!userName.matches("[a-zA-Z ]+")){
                 Toast.makeText(
@@ -42,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
                         "Telephone must only contain numbers",
                         Toast.LENGTH_SHORT
                 ).show();
+                return;
+            }
+
+            if(!userEmail.contains("@")){
+                Toast.makeText(this,
+                        "Enter a valid email",
+                        Toast.LENGTH_SHORT).show();
                 return;
             }
 
