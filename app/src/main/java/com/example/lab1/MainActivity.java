@@ -25,11 +25,21 @@ public class MainActivity extends AppCompatActivity {
         submit.setOnClickListener(v -> {
 
             String userName = name.getText().toString();
+            String userPhone = phone.getText().toString();
 
             if(!userName.matches("[a-zA-Z ]+")){
                 Toast.makeText(
                         this,
                         "Name must only contain letters",
+                        Toast.LENGTH_SHORT
+                ).show();
+                return;
+            }
+
+            if(!userPhone.matches("[0-9]+")){
+                Toast.makeText(
+                        this,
+                        "Telephone must only contain numbers",
                         Toast.LENGTH_SHORT
                 ).show();
                 return;
