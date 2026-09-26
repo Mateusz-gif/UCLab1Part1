@@ -1,7 +1,6 @@
 package com.example.lab1;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,9 +22,18 @@ public class MainActivity extends AppCompatActivity {
 
         Button submit = findViewById(R.id.submit);
 
-        submit.setOnClickListener(v ->) {
+        submit.setOnClickListener(v -> {
 
             String userName = name.getText().toString();
+
+            if(!userName.matches("[a-zA-Z ]+")){
+                Toast.makeText(
+                        this,
+                        "Name must only contain letters",
+                        Toast.LENGTH_SHORT
+                ).show();
+                return;
+            }
 
             Toast.makeText(
                     this,
