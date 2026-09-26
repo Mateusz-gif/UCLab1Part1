@@ -1,8 +1,10 @@
 package com.example.lab1;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +22,18 @@ public class MainActivity extends AppCompatActivity {
         EditText email= findViewById(R.id.email);
 
         Button submit = findViewById(R.id.submit);
+
+        submit.setOnClickListener(v ->) {
+
+            String userName = name.getText().toString();
+
+            Toast.makeText(
+                    this,
+                    "Thank you " + userName + ", your request is being processed",
+                    Toast.LENGTH_LONG
+            ).show();
+
+        });
 
     }
 }
